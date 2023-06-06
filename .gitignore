@@ -5,6 +5,8 @@
 # Session Data files
 .RData
 .RDataTmp
+*.Rproj
+*oldcode*
 
 # User-specific files
 .Ruserdata
