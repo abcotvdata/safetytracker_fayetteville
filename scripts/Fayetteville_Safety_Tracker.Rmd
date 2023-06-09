@@ -230,13 +230,13 @@ The murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior3y
 
 The city averaged <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last year. In 2019, that number was <h8>`r round(murders_city$total19/12,0)`</h8> per month.
 
-One way to think about the danger: in 2019, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about one third the likelihood of someone dying in a vehicle crash in North Carolina. In the wake of the pandemic, a person's chance of being murdered in Fayetteville from 2020-2022 rose to about the same as the risk of a fatal traffic crash in North Carolina.
+One way to think about the danger: in 2019, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about one third the likelihood of someone dying in a vehicle crash in North Carolina. In the wake of the pandemic, a person's chance of being murdered in Fayetteville from 2020-2022 rose to about the same as the risk of a fatal traffic crash in North Carolina. It's been falling slowly in 2023 so far.
 
-However, the risk remains much lower than most other leading causes of death in the state.
+The risk of homicide remains much lower than most other leading causes of death in the state.
 <br>
 <br>
 <!-- <subhead>Risk of being murdered -->
-<iframe title="Risk of homicide in Raleigh vs. other causes of death" aria-label="Bar Chart" id="datawrapper-chart-aT7ey" src="https://datawrapper.dwcdn.net/aT7ey/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="373" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<iframe title="Risk of homicide in Fayetteville vs. other causes of death" aria-label="Bar Chart" id="datawrapper-chart-E0KbF" src="https://datawrapper.dwcdn.net/E0KbF/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="389" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 <br>
 <br>
 The risk is not the same neighborhood to neighborhood.
@@ -426,11 +426,11 @@ fayetteville_murder_map
 ```
 <br>
 <br>
-<iframe title="Homicides year by year in Raleigh" aria-label="Column Chart" id="datawrapper-chart-XGwnF" src="https://datawrapper.dwcdn.net/XGwnF/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<iframe title="Homicides year by year in Fayetteville" aria-label="Column Chart" id="datawrapper-chart-lZqOl" src="https://datawrapper.dwcdn.net/lZqOl/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 <br>
 <br>
 <!-- <subhead> comparison to other cities chart </subhead> -->
-<iframe title="2021 homicide rate comparison in select cities" aria-label="Bar Chart" id="datawrapper-chart-VrYC8" src="https://datawrapper.dwcdn.net/VrYC8/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="628" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<iframe title="2021 homicide rate comparison in select cities" aria-label="Bar Chart" id="datawrapper-chart-Y2HuS" src="https://datawrapper.dwcdn.net/Y2HuS/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="653" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 <br>
 <br>
 <script>!function(){var a,n,i=window||{},s=document||{},t=0;function r(){var e=a.scrollHeight+20;isNaN(e)||e==t||(t=e,isNaN(t)||i.webkit&&i.webkit.messageHandlers&&i.webkit.messageHandlers.espnWebview&&i.webkit.messageHandlers.espnWebview.postMessage({callBack:null,commandName:"ABCNresize",params:{height:t}}))}function o(){var e,a;e=r,a=250,clearTimeout(n),n=setTimeout(e,a)}i.addEventListener("load",function(e){a=s.querySelector(".main-container"),o(),i.addEventListener("resize",o)})}();</script>
