@@ -212,7 +212,6 @@ citywide_category %>% select(1:16) %>% filter(category=="Burglary") %>%  write_c
 citywide_category %>% select(1:16) %>% filter(category=="Robbery") %>%  write_csv("data/output/yearly/robberies_city.csv")
 citywide_category %>% select(1:16) %>% filter(category=="Aggravated Assault") %>%  write_csv("data/output/yearly/assaults_city.csv")
 
-
 # Calculate of each type of crime CITYWIDE
 citywide_type <- fay_crime %>%
   group_by(type,year) %>%
