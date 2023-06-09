@@ -183,21 +183,21 @@ th {
    }
 ```
 
-<h2>ABC11 is tracking crime and safety across Raleigh and in your neighborhood. 
+<h2>ABC11 is tracking crime and safety across Fayetteville and in your neighborhood. 
 <br>You can choose which crime to examine: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Burglaries.html">Burglaries</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Assaults.html">Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Homicides</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Robberies.html">Robberies</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Thefts.html">Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Burglaries.html">Burglaries</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Assaults.html">Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">Homicides</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Robberies.html">Robberies</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Thefts.html">Thefts</option>
 </select></h2>
 <h2>Choose a different city to explore: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Raleigh</option>
-<option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker.html">Durham</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">Fayetteville</option>
+<option value="https://abcotvdata.github.io/safetytracker_durham/Raleigh_Safety_Tracker.html">Raleigh</option><option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker.html">Durham</option>
 <option value="https://abcotvdata.github.io/safetytracker_cary/Cary_Safety_Tracker.html">Cary</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">More coming soon!</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">More coming soon!</option>
 </select></h2>
 
 <div class="cardContainer">
@@ -223,13 +223,13 @@ Per 100,000 people</p>
 </div>
 </div>
 <br>
-Burglaries over the last 12 months are <h8>`r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0,burglaries_city$inc_prior3yearavgtolast12,substring(burglaries_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years, according to the latest data available from the Raleigh Police Department.
+Burglaries over the last 12 months are <h8>`r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0,burglaries_city$inc_prior3yearavgtolast12,substring(burglaries_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years, according to the latest data available from Fayetteville Police Department.
 
 The city averaged <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries a week over the last 12 months. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
-<subhead>A closer look at Raleigh burglaries neighborhood by neighborhood</subhead>
+<subhead>A closer look at Fayetteville burglaries neighborhood by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC11's data team looked at the Raleigh Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
+The risk is not the same neighborhood to neighborhood. ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
 
 The map color-codes each neighborhood by the burglary rate over the last 12 months. The three darker blues represent neighborhoods with burglary rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of burglaries.
 
@@ -272,8 +272,8 @@ burglarylabel <- paste(sep="",
                      "<popuptitle>",
                      burglaries_district$last12mos,
                      " burglaries </popuptitle><br>",
-                     " in the last 12 months in the <b>",
-                     burglaries_district$district_name,
+                     " in the last 12 months in police zone <b>",
+                     burglaries_district$zone,
                      "</b> police district, which includes the <b>",
                      burglaries_district$placename,
                      "</b> areas, home to an estimated ",
@@ -343,7 +343,7 @@ round(burglaries_district$rate_prior3years,0),
 </table>")
 
 # Creating police districts map for types of crimes
-raleigh_burglary_map <- leaflet(burglaries_district, options = leafletOptions(zoomControl = FALSE, zoomSnap = 0.5, zoomDelta=0.5)) %>%
+Fayetteville_burglary_map <- leaflet(burglaries_district, options = leafletOptions(zoomControl = FALSE, zoomSnap = 0.5, zoomDelta=0.5)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
@@ -405,7 +405,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
          this.on('baselayerchange', el => updateLegend());
       }"
    )
-raleigh_burglary_map
+Fayetteville_burglary_map
 ```
 <br>
 <br>

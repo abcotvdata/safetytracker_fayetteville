@@ -184,21 +184,22 @@ th {
    }
 ```
 
-<h2>ABC11 is tracking crime and safety across Raleigh and in your neighborhood. 
+<h2>ABC11 is tracking crime and safety across Fayetteville and in your neighborhood. 
 <br>You can choose which crime to explore: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Homicides</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Assaults.html">Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Burglaries.html">Burglaries</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Robberies.html">Robberies</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker_Thefts.html">Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">Homicides</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Assaults.html">Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Burglaries.html">Burglaries</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Robberies.html">Robberies</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Thefts.html">Thefts</option>
 </select></h2>
 <h2>Choose a different city to explore: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Raleigh</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">Fayetteville</option>
+<option value="https://abcotvdata.github.io/safetytracker_durham/Raleigh_Safety_Tracker.html">Raleigh</option>
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker.html">Durham</option>
 <option value="https://abcotvdata.github.io/safetytracker_cary/Cary_Safety_Tracker.html">Cary</option>
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">More coming soon!</option>
+<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">More coming soon!</option>
 </select></h2>
 
 <div class="cardContainer">
@@ -224,13 +225,13 @@ Per 100,000 people</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22tolast12>=0," up"," down")` `r ifelse(murders_city$inc_22tolast12>=0,murders_city$inc_22tolast12,substring(murders_city$inc_22tolast12,2))`%</h8> compared to 2022, according to the latest data available from the Raleigh Police Department.
+Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22tolast12>=0," up"," down")` `r ifelse(murders_city$inc_22tolast12>=0,murders_city$inc_22tolast12,substring(murders_city$inc_22tolast12,2))`%</h8> compared to 2022, according to the latest data available from Fayetteville Police Department.
 
 The murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years, and the frequency of killings remains higher than it was before the pandemic.
 
 The city averaged <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last year. In 2019, that number was <h8>`r round(murders_city$total19/12,0)`</h8> per month.
 
-One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about one third the likelihood of someone dying in a vehicle crash in North Carolina. In the wake of the pandemic, a person's chance of being murdered in Raleigh has risen to about half of the risk of a fatal traffic crash.
+One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about one third the likelihood of someone dying in a vehicle crash in North Carolina. In the wake of the pandemic, a person's chance of being murdered in Fayetteville has risen to about half of the risk of a fatal traffic crash.
 
 The risk remains much lower than most other leading causes of death in the state.
 <br>
@@ -241,7 +242,7 @@ The risk remains much lower than most other leading causes of death in the state
 <br>
 The risk is not the same neighborhood to neighborhood.
 
-ABC11's data team looked at the Raleigh Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
+ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
 
 <subhead>A closer look at homicides by police district</subhead>
 
@@ -288,8 +289,8 @@ murderlabel <- paste(sep="",
                      ifelse(murders_district$last12mos==1,
                      " homicide </popuptitle><br>",
                      " homicides </popuptitle><br>"),
-                     " in the last 12 months in the <b>",
-                     murders_district$district_name,
+                     " in the last 12 months in police zone <b>",
+                     murders_district$zone,
                      "</b> police district, which includes the <b>",
                      murders_district$placename,
                      "</b> areas, home to an estimated ",
@@ -360,7 +361,7 @@ murders_district$rate_prior3years,
 
 
 # Creating police districts map for types of crimes
-raleigh_murder_map <- leaflet(murders_district, options = leafletOptions(zoomControl = FALSE, zoomSnap = 0.5, zoomDelta=0.5)) %>%
+fayetteville_murder_map <- leaflet(murders_district, options = leafletOptions(zoomControl = FALSE, zoomSnap = 0.5, zoomDelta=0.5)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
@@ -422,7 +423,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
          this.on('baselayerchange', el => updateLegend());
       }"
    )
-raleigh_murder_map
+fayetteville_murder_map
 ```
 <br>
 <br>
