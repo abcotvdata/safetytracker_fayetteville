@@ -190,7 +190,6 @@ th {
 <option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Robberies.html">Robberies</option>
-<option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
 <option value="https://abcotvdata.github.io/safetytracker_fayetteville/Fayetteville_Safety_Tracker_Thefts.html">Thefts</option>
 </select></h2>
 <h2>Choose a different city to explore: <select onchange="window.location=this.value">

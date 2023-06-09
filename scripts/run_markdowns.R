@@ -66,10 +66,10 @@ rmarkdown::render('scripts/Fayetteville_Safety_Tracker_Assaults.Rmd',
 
 # SEXUAL ASSAULTS
 # Load RDS
-sexassaults_district <- readRDS("scripts/rds/sexassaults_district.rds")
-sexassaults_city <- readRDS("scripts/rds/sexassaults_city.rds")
-asofdate <- readRDS("scripts/rds/asofdate.rds")
+#sexassaults_district <- readRDS("scripts/rds/sexassaults_district.rds")
+#sexassaults_city <- readRDS("scripts/rds/sexassaults_city.rds")
+#asofdate <- readRDS("scripts/rds/asofdate.rds")
 # Render page
-rmarkdown::render('scripts/Fayetteville_Safety_Tracker_SexualAssaults.Rmd', 
-                  output_dir = "docs",
-                  output_file = 'Fayetteville_Safety_Tracker_SexualAssaults.html')
+#rmarkdown::render('scripts/Fayetteville_Safety_Tracker_SexualAssaults.Rmd', 
+ #                 output_dir = "docs",
+    #              output_file = 'Fayetteville_Safety_Tracker_SexualAssaults.html')
