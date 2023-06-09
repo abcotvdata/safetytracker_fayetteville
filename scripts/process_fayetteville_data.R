@@ -38,8 +38,8 @@ fay_crime$category <- case_when(fay_crime$ucr_code=="09A" ~ "Murder",
                                     fay_crime$ucr_code=="13A" ~ "Aggravated Assault",
                                     fay_crime$ucr_code=="120" ~ "Robbery",
                                     fay_crime$ucr_code=="220" ~ "Burglary",
-                                    fay_crime$ucr_code %in% 
-                                      c("13B","13C") ~ "Sexual Assault",
+#                                    fay_crime$ucr_code %in% 
+#                                      c("13B","13C") ~ "Sexual Assault",
                                     fay_crime$ucr_code %in% 
                                       c("23A","23B","23C","23D","23E","23F","23G","23H") ~ "Theft",
                                     fay_crime$ucr_code=="240" ~ "Motor Vehicle Theft",
@@ -49,8 +49,8 @@ fay_crime$type <- case_when(fay_crime$ucr_code=="09A" ~ "Violent",
                    fay_crime$ucr_code=="13A" ~ "Violent",
                    fay_crime$ucr_code=="120" ~ "Violent",
                    fay_crime$ucr_code=="220" ~ "Property",
-                   fay_crime$ucr_code %in% 
-                     c("13B","13C") ~ "Violent",
+#                   fay_crime$ucr_code %in% 
+#                     c("13B","13C") ~ "Violent",
                    fay_crime$ucr_code %in% 
                      c("23A","23B","23C","23D","23E","23F","23G","23H") ~ "Property",
                    fay_crime$ucr_code=="240" ~ "Property",
