@@ -347,7 +347,7 @@ Fayetteville_theft_map <- leaflet(thefts_district, options = leafletOptions(zoom
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-78.65, 35.79, zoom = 11.5) %>% 
+  setView(-78.94, 35.06, zoom = 11.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = theftlabel,

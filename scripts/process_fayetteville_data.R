@@ -311,7 +311,7 @@ district_detailed$inc_19tolast12 <- round(district_detailed$last12mos/district_d
 district_detailed$inc_22tolast12 <- round(district_detailed$last12mos/district_detailed$total22*100-100,1)
 district_detailed$inc_prior3yearavgtolast12 <- round((district_detailed$last12mos/district_detailed$avg_prior3years)*100-100,0)
 # add population for beats
-district_detailed <- full_join(district_detailed,districts,by=c("district"="zone"))
+district_detailed <- full_join(districts,district_detailed,by=c("zone"="district"))
 # calculate the beat by beat rates PER 1K people
 district_detailed$rate19 <- round(district_detailed$total19/district_detailed$population*100000,1)
 district_detailed$rate20 <- round(district_detailed$total20/district_detailed$population*100000,1)
@@ -358,7 +358,7 @@ district_category$inc_19tolast12 <- round(district_category$last12mos/district_c
 district_category$inc_22tolast12 <- round(district_category$last12mos/district_category$total22*100-100,1)
 district_category$inc_prior3yearavgtolast12 <- round((district_category$last12mos/district_category$avg_prior3years)*100-100,0)
 # add population for beats
-district_category <- full_join(district_category,districts,by=c("district"="zone"))
+district_category <- full_join(districts,district_category,by=c("zone"="district"))
 # calculate the beat by beat rates PER 1K people
 district_category$rate19 <- round(district_category$total19/district_category$population*100000,1)
 district_category$rate20 <- round(district_category$total20/district_category$population*100000,1)
@@ -405,7 +405,7 @@ district_type$inc_19tolast12 <- round(district_type$last12mos/district_type$tota
 district_type$inc_22tolast12 <- round(district_type$last12mos/district_type$total22*100-100,1)
 district_type$inc_prior3yearavgtolast12 <- round((district_type$last12mos/district_type$avg_prior3years)*100-100,0)
 # add population for beats
-district_type <- full_join(district_type,districts,by=c("district"="zone"))
+district_type <- full_join(districts,district_type,by=c("zone"="district"))
 # calculate the beat by beat rates PER 1K people
 district_type$rate19 <- round(district_type$total19/district_type$population*100000,1)
 district_type$rate20 <- round(district_type$total20/district_type$population*100000,1)
