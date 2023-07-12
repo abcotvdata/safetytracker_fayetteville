@@ -56,7 +56,8 @@ fay_property <- read_csv("data/source/fayetteville_crime_property.csv") %>% jani
 fay_people <- read_csv("data/source/fayetteville_crime_people.csv") %>% janitor::clean_names()
 fay_society <- read_csv("data/source/fayetteville_crime_society.csv") %>% janitor::clean_names()
 
-fay_crime <- rbind(fay_property,fay_people,fay_society)
+fay_crime <- rbind(fay_property,fay_people)
+# for now, we're dropping society from the merge
 
 # Rebuild date fields in formats we need
 fay_crime$date <- ymd(substr(fay_crime$date_incident,1,10))
