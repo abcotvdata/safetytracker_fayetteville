@@ -14,6 +14,12 @@ download.file("https://opendata.arcgis.com/api/v3/datasets/7bc2bd68adb3453496b30
 download.file("https://opendata.arcgis.com/api/v3/datasets/74f34da7e6f1404f868fd9e22bf9f09c_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_property.csv")
 
+# there is a separate live feed limited to 1,000 incidents
+# possible we could archive the larger files and then update with these feeds later
+# prop <- st_read("data/source/fayetteville_crime_property.geojson")
+# download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstProperty/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
+#              "data/source/fayetteville_crime_property.geojson")
+
 # newest people
 download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstPersons/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
 "data/source/fayetteville_crime_people_recent.json")
@@ -24,13 +30,27 @@ download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Poli
 download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstSociety/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
 "data/source/fayetteville_crime_society_recent.json")
 
-# there is a separate live feed limited to 1,000 incidents
-# possible we could archive the larger files and then update with these feeds later
-# prop <- st_read("data/source/fayetteville_crime_property.geojson")
-# download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstProperty/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
-#              "data/source/fayetteville_crime_property.geojson")
+# saved function to convert the milliseconds from UTC 
+ms_to_date = function(ms, t0="1970-01-01", timezone) {
+  sec = ms / 1000
+  as.POSIXct(sec, origin=t0, tz=timezone)
+}
+
+fay_people_recent <- st_read("data/source/fayetteville_crime_people_recent.json")
+fay_property_recent <- st_read("data/source/fayetteville_crime_property_recent.json")
+fay_society_recent <- st_read("data/source/fayetteville_crime_society_recent.json")
+fay_crime_recent <- rbind(fay_property_recent,fay_people_recent,fay_society_recent) %>% 
+  janitor::clean_names()
+fay_crime_recent$date_incident <- ms_to_date(as.numeric(fay_crime_recent$date_incident), t0 = "1970-01-01", timezone = "America/New York")
+
+# Rebuild date fields in formats we need
+fay_crime_recent$date <- ymd(substr(fay_crime_recent$date_incident,1,10))
+fay_crime_recent$hour <- substr(fay_crime_recent$fay_pd_tod,1,2)
+fay_crime_recent$year <- year(fay_crime_recent$date)
+fay_crime_recent$month <- lubridate::floor_date(as.Date(fay_crime_recent$date),"month")
 
 
+# Return to the standard processing here
 
 fay_property <- read_csv("data/source/fayetteville_crime_property.csv") %>% janitor::clean_names()
 fay_people <- read_csv("data/source/fayetteville_crime_people.csv") %>% janitor::clean_names()

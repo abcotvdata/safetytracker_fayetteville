@@ -227,11 +227,7 @@ Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22
 
 The murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years.
 
-The city averaged <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last year. In 2019, that number was <h8>`r round(murders_city$total19/12,0)`</h8> per month.
-
-One way to think about the danger: in 2019, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about one third the likelihood of someone dying in a vehicle crash in North Carolina. In the wake of the pandemic, a person's chance of being murdered in Fayetteville from 2020-2022 rose to about the same as the risk of a fatal traffic crash in North Carolina. It's been falling slowly in 2023 so far.
-
-The risk of homicide remains much lower than most other leading causes of death in the state.
+One way to think about the danger: in 2019, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's less than the likelihood of someone dying in a vehicle crash in North Carolina. In fact, the risk of homicide remains much lower than most other leading causes of death in the state.
 <br>
 <br>
 <!-- <subhead>Risk of being murdered -->
@@ -240,7 +236,7 @@ The risk of homicide remains much lower than most other leading causes of death 
 <br>
 The risk is not the same neighborhood to neighborhood.
 
-ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
+ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`. ABC11's citywide and police zone counts are based on the police department's open data of every police incident, which is updated daily and published online. Because the city's data is based on incident reports, some cases may not be counted yet. Murders, for example, are included in the data later than other types of crimes.
 
 <subhead>A closer look at homicides by police district</subhead>
 
@@ -289,7 +285,7 @@ murderlabel <- paste(sep="",
                      " homicides </popuptitle><br>"),
                      " in the last 12 months in police zone <b>",
                      murders_district$zone,
-                     "</b> police district, which includes the <b>",
+                     "</b>, which includes the <b>",
                      murders_district$placename,
                      "</b> areas, home to an estimated ",
                      prettyNum(murders_district$population, big.mark=","),
@@ -423,6 +419,9 @@ L.control.zoom({ position: 'topright' }).addTo(this)
    )
 fayetteville_murder_map
 ```
+<br>
+<br>
+A note about Fayetteville Police Department data and these pages: Statistics here count every incident in police data. Methodology for some government reports of crimes tabulates only the most severe incident if two crimes are reported as part of the same incident. For example, a homicide and a burglary will get counted in some crime totals as one incident of the most serious crime. Modern FBI methodology would count each incident as an individual crime, so it would count as a burgarly and as a homicide. That is how the city data records incidents and how these pages and charts tabulate crimes.
 <br>
 <br>
 <iframe title="Homicides year by year in Fayetteville" aria-label="Column Chart" id="datawrapper-chart-lZqOl" src="https://datawrapper.dwcdn.net/lZqOl/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
