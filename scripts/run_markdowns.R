@@ -8,7 +8,7 @@ library(rmarkdown)
 # Load RDS
 murders_district <- readRDS("scripts/rds/murders_district.rds")
 murders_city <- readRDS("scripts/rds/murders_city.rds")
-asofdate <- readRDS("scripts/rds/asofdate.rds")
+maxdate <- readRDS("scripts/rds/maxdate.rds")
 # Render page
 rmarkdown::render('scripts/Fayetteville_Safety_Tracker.Rmd', 
                   output_dir = "docs",

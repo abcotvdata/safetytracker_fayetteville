@@ -204,7 +204,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicides<br>Last 12 months<br>
 <bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-Through `r format(asofdate, "%B %d")`</p>
+Through `r format(maxdate, "%B %d")`</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>2020 to 2022<br>
@@ -236,7 +236,7 @@ One way to think about the danger: in 2019, the murder rate was <h8>`r murders_c
 <br>
 The risk is not the same neighborhood to neighborhood.
 
-ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`. ABC11's citywide and police zone counts are based on the police department's open data of every police incident, which is updated daily and published online. Because the city's data is based on incident reports, some cases may not be counted yet. Murders, for example, are included in the data later than other types of crimes.
+ABC11's data team looked at the Fayetteville Police Department's data by neighborhood from 2019 through `r format(maxdate, "%B %d, %Y")`. ABC11's citywide and police zone counts are based on the police department's open data of every police incident, which is updated daily and published online. Because the city's data is based on incident reports, some cases may not be counted yet. Murders, for example, are included in the data later than other types of crimes.
 
 <subhead>A closer look at homicides by police district</subhead>
 

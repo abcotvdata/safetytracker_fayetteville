@@ -48,6 +48,12 @@ fay_crime_recent$date <- ymd(substr(fay_crime_recent$date_incident,1,10))
 fay_crime_recent$hour <- substr(fay_crime_recent$fay_pd_tod,1,2)
 fay_crime_recent$year <- year(fay_crime_recent$date)
 fay_crime_recent$month <- lubridate::floor_date(as.Date(fay_crime_recent$date),"month")
+fay_crime_recent$test <- lubridate::ceiling_date(as.Date(fay_crime_recent$date),"month")-1
+fay_crime_recent$endmonth <- lubridate::ceiling_date(as.Date(max(fay_crime_recent$date)),"month")-1
+
+
+
+  
 
 
 # Return to the standard processing here
@@ -533,6 +539,11 @@ saveRDS(robberies_district,"scripts/rds/robberies_district.rds")
 # automating the updated date text in building tracker
 asofdate <- max(fay_crime$date)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
+# creating a slightly different as of date for murder for lag reporting
+max_date <- fay_crime %>% 
+  filter(category=="Murder")
+maxdate <- ceiling_date(max(max_date$date),"month")
+saveRDS(maxdate,"scripts/rds/maxdate.rds")
 
 # additional table exports for specific charts
 when_murders_happen %>% write_csv("data/output/city/when_murders_happen.csv")
