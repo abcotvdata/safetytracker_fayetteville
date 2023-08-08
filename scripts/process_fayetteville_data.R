@@ -9,8 +9,8 @@ library(lubridate)
 
 download.file("https://opendata.arcgis.com/api/v3/datasets/f52ad2a08f5c405d8b1d0f333c34824e_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_people.csv")
-download.file("https://opendata.arcgis.com/api/v3/datasets/7bc2bd68adb3453496b305c764390887_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
-              "data/source/fayetteville_crime_society.csv")
+#download.file("https://opendata.arcgis.com/api/v3/datasets/7bc2bd68adb3453496b305c764390887_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
+#              "data/source/fayetteville_crime_society.csv")
 download.file("https://opendata.arcgis.com/api/v3/datasets/74f34da7e6f1404f868fd9e22bf9f09c_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_property.csv")
 
