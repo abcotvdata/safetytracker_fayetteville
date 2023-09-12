@@ -27,8 +27,8 @@ download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Poli
 download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstProperty/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
 "data/source/fayetteville_crime_property_recent.json")
 # newest society
-download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstSociety/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
-"data/source/fayetteville_crime_society_recent.json")
+#download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstSociety/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
+#"data/source/fayetteville_crime_society_recent.json")
 
 # saved function to convert the milliseconds from UTC 
 ms_to_date = function(ms, t0="1970-01-01", timezone) {
@@ -38,7 +38,7 @@ ms_to_date = function(ms, t0="1970-01-01", timezone) {
 
 fay_people_recent <- st_read("data/source/fayetteville_crime_people_recent.json")
 fay_property_recent <- st_read("data/source/fayetteville_crime_property_recent.json")
-fay_society_recent <- st_read("data/source/fayetteville_crime_society_recent.json")
+# fay_society_recent <- st_read("data/source/fayetteville_crime_society_recent.json")
 fay_crime_recent <- rbind(fay_property_recent,fay_people_recent,fay_society_recent) %>% 
   janitor::clean_names()
 fay_crime_recent$date_incident <- ms_to_date(as.numeric(fay_crime_recent$date_incident), t0 = "1970-01-01", timezone = "America/New York")
@@ -60,7 +60,7 @@ fay_crime_recent$endmonth <- lubridate::ceiling_date(as.Date(max(fay_crime_recen
 
 fay_property <- read_csv("data/source/fayetteville_crime_property.csv") %>% janitor::clean_names()
 fay_people <- read_csv("data/source/fayetteville_crime_people.csv") %>% janitor::clean_names()
-fay_society <- read_csv("data/source/fayetteville_crime_society.csv") %>% janitor::clean_names()
+# fay_society <- read_csv("data/source/fayetteville_crime_society.csv") %>% janitor::clean_names()
 
 fay_crime <- rbind(fay_property,fay_people)
 # for now, we're dropping society from the merge
