@@ -20,7 +20,9 @@ jobs:
         run: |
           brew install gdal
       - name: Install dependencies and packages
-        run: Rscript -e 'install.packages(c("sf","tidyverse","leaflet","lubridate","leaflet.extras","leaflet.providers","htmlwidgets","pdftools","zoo","readxl","htmltools","rmarkdown"))'
+        run: Rscript -e 'install.packages(c("sf","tidyverse","leaflet","lubridate","janitor","leaflet.extras","leaflet.providers","htmlwidgets","pdftools","zoo","readxl","htmltools","rmarkdown"))'
+      - name: Get data streams
+        run: Rscript scripts/get_fayetteville_recent.R
       - name: Update and merge data
         run: Rscript scripts/process_fayetteville_data.R
       - name: Render markdowns from central script

@@ -7,8 +7,8 @@ library(lubridate)
 # So we're going to automate a stream to grab each and append to a df
 
 # STEP 1: Creating an empty dataframe that matches precisely the format we're going to stream these files into one by one
-download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstPersons/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson","file.json")
-fayetteville_new <- st_read("file.json")
+download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstPersons/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson","data/template.json")
+fayetteville_new <- st_read("data/template.json")
 fayetteville_new <- fayetteville_new %>% slice_head(n = 0)
 
 # Set sequences for people, property data stream loops
