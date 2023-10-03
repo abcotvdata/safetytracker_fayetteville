@@ -4,6 +4,9 @@ library(rmarkdown)
 # Includes loading pre-processed and stored dfs
 # Grouped by each page to allow for individual or mass processing
 
+# bring in stored date, which we'll need in building all trackers page
+asofdate <- readRDS("scripts/rds/asofdate.rds")
+
 # MURDERS
 # Load RDS
 murders_district <- readRDS("scripts/rds/murders_district.rds")

@@ -9,68 +9,40 @@ library(lubridate)
 
 download.file("https://opendata.arcgis.com/api/v3/datasets/f52ad2a08f5c405d8b1d0f333c34824e_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_people.csv")
-#download.file("https://opendata.arcgis.com/api/v3/datasets/7bc2bd68adb3453496b305c764390887_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
-#              "data/source/fayetteville_crime_society.csv")
+
 download.file("https://opendata.arcgis.com/api/v3/datasets/74f34da7e6f1404f868fd9e22bf9f09c_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_property.csv")
 
-# there is a separate live feed limited to 1,000 incidents
-# possible we could archive the larger files and then update with these feeds later
-# prop <- st_read("data/source/fayetteville_crime_property.geojson")
-# download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstProperty/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
-#              "data/source/fayetteville_crime_property.geojson")
-
-# newest people
-download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstPersons/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
-"data/source/fayetteville_crime_people_recent.json")
-# newest property
-download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstProperty/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
-"data/source/fayetteville_crime_property_recent.json")
-# newest society
-#download.file("https://gismaps.ci.fayetteville.nc.us/opendata/rest/services/Police/IncidentsCrimesAgainstSociety/MapServer/0/query?where=0%3D0&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=Date_Incident+DESC&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson",
-#"data/source/fayetteville_crime_society_recent.json")
-
-# saved function to convert the milliseconds from UTC 
-ms_to_date = function(ms, t0="1970-01-01", timezone) {
-  sec = ms / 1000
-  as.POSIXct(sec, origin=t0, tz=timezone)
-}
-
-fay_people_recent <- st_read("data/source/fayetteville_crime_people_recent.json")
-fay_property_recent <- st_read("data/source/fayetteville_crime_property_recent.json")
-# fay_society_recent <- st_read("data/source/fayetteville_crime_society_recent.json")
-fay_crime_recent <- rbind(fay_property_recent,fay_people_recent,fay_society_recent) %>% 
-  janitor::clean_names()
-fay_crime_recent$date_incident <- ms_to_date(as.numeric(fay_crime_recent$date_incident), t0 = "1970-01-01", timezone = "America/New York")
-
-# Rebuild date fields in formats we need
-fay_crime_recent$date <- ymd(substr(fay_crime_recent$date_incident,1,10))
-fay_crime_recent$hour <- substr(fay_crime_recent$fay_pd_tod,1,2)
-fay_crime_recent$year <- year(fay_crime_recent$date)
-fay_crime_recent$month <- lubridate::floor_date(as.Date(fay_crime_recent$date),"month")
-fay_crime_recent$test <- lubridate::ceiling_date(as.Date(fay_crime_recent$date),"month")-1
-fay_crime_recent$endmonth <- lubridate::ceiling_date(as.Date(max(fay_crime_recent$date)),"month")-1
-
-
-
-  
-
-
-# Return to the standard processing here
-
+# Read in the files we just downloaded
 fay_property <- read_csv("data/source/fayetteville_crime_property.csv") %>% janitor::clean_names()
 fay_people <- read_csv("data/source/fayetteville_crime_people.csv") %>% janitor::clean_names()
-# fay_society <- read_csv("data/source/fayetteville_crime_society.csv") %>% janitor::clean_names()
+fay_recent <- readRDS("scripts/rds/fayetteville_new.rds")
 
+# Merge into a single primary fay_crime file
 fay_crime <- rbind(fay_property,fay_people)
-# for now, we're dropping society from the merge
 
 # Rebuild date fields in formats we need
+# Makes consistent with the recent incidents stream we're adding next
 fay_crime$date <- ymd(substr(fay_crime$date_incident,1,10))
 fay_crime$hour <- substr(fay_crime$fay_pd_tod,1,2)
 fay_crime$year <- year(fay_crime$date)
 fay_crime$month <- lubridate::floor_date(as.Date(fay_crime$date),"month")
+#fay_crime <- fay_crime %>% rename("latitude"="y")
+#fay_crime <- fay_crime %>% rename("longitude"="x")
+# Drop premise, apt, date_incident and date_secure from dataframe
+fay_crime$date_incident <- NULL
+fay_crime$date_secure <- NULL
+#fay_crime$apt <- NULL
+fay_crime$reportarea <- NULL
+fay_crime$x <- NULL
+fay_crime$y <- NULL
 
+# Now merge in the recent file
+fay_crime <- rbind(fay_crime,fay_recent)
+fay_crime <- distinct(fay_crime)
+
+# Recoding and defining standard categories for tracker; we're leaving out sexual assault because
+# extremely redacted in the Fayetteville PD data, so an inaccurate representation
 fay_crime$category <- case_when(fay_crime$ucr_code=="09A" ~ "Murder",
                                     fay_crime$ucr_code=="13A" ~ "Aggravated Assault",
                                     fay_crime$ucr_code=="120" ~ "Robbery",
@@ -553,12 +525,3 @@ deaths <- read_excel("data/source/health/deaths.xlsx")
 deaths <- deaths %>% filter(state=="NC")
 deaths$Homicide <- murders_city$rate_last12
 write_csv(deaths,"data/source/health/death_rates.csv")
-
-# For testing
-# Calculate number of repeat case_numbers
-casenumcount <- fay_crime %>%
-  group_by(case_number,year) %>%
-  summarise(count = n()) %>%
-  arrange(year)
-
-
