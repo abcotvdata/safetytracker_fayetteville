@@ -5,50 +5,49 @@ library(zoo)
 library(lubridate)
 
 
-# starting to lay out crime data sourcing
-
+# Download the latest full files from Fayetteville police open data
+# For crimes against people
 download.file("https://opendata.arcgis.com/api/v3/datasets/f52ad2a08f5c405d8b1d0f333c34824e_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_people.csv")
-
+# Then for crimes against property
 download.file("https://opendata.arcgis.com/api/v3/datasets/74f34da7e6f1404f868fd9e22bf9f09c_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1",
               "data/source/fayetteville_crime_property.csv")
 
 # Read in the files we just downloaded
 fay_property <- read_csv("data/source/fayetteville_crime_property.csv") %>% janitor::clean_names()
 fay_people <- read_csv("data/source/fayetteville_crime_people.csv") %>% janitor::clean_names()
+
+# Read in the SEPARATELY processed recent incidents file gathered in get_fayetteville_recent.R
 fay_recent <- readRDS("scripts/rds/fayetteville_new.rds")
 
 # Merge into a single primary fay_crime file
 fay_crime <- rbind(fay_property,fay_people)
 
-# Rebuild date fields in formats we need
-# Makes consistent with the recent incidents stream we're adding next
+# Rebuild data into fields consistent with the recent incidents stream we're adding next
 fay_crime$date <- ymd(substr(fay_crime$date_incident,1,10))
 fay_crime$hour <- substr(fay_crime$fay_pd_tod,1,2)
 fay_crime$year <- year(fay_crime$date)
 fay_crime$month <- lubridate::floor_date(as.Date(fay_crime$date),"month")
-#fay_crime <- fay_crime %>% rename("latitude"="y")
-#fay_crime <- fay_crime %>% rename("longitude"="x")
+
 # Drop premise, apt, date_incident and date_secure from dataframe
 fay_crime$date_incident <- NULL
 fay_crime$date_secure <- NULL
-#fay_crime$apt <- NULL
 fay_crime$reportarea <- NULL
 fay_crime$x <- NULL
 fay_crime$y <- NULL
 
-# Now merge in the recent file
+# Merge in the recent file
 fay_crime <- rbind(fay_crime,fay_recent)
+# There will be some duplicate records in the recent file already in the full files
+# We're deleting those duplicates
 fay_crime <- distinct(fay_crime)
 
 # Recoding and defining standard categories for tracker; we're leaving out sexual assault because
-# extremely redacted in the Fayetteville PD data, so an inaccurate representation
+# extremely redacted in the Fayetteville PD data, so any stats are an inaccurate representation
 fay_crime$category <- case_when(fay_crime$ucr_code=="09A" ~ "Murder",
                                     fay_crime$ucr_code=="13A" ~ "Aggravated Assault",
                                     fay_crime$ucr_code=="120" ~ "Robbery",
                                     fay_crime$ucr_code=="220" ~ "Burglary",
-#                                    fay_crime$ucr_code %in% 
-#                                      c("13B","13C") ~ "Sexual Assault",
                                     fay_crime$ucr_code %in% 
                                       c("23A","23B","23C","23D","23E","23F","23G","23H") ~ "Theft",
                                     fay_crime$ucr_code=="240" ~ "Motor Vehicle Theft",
@@ -58,31 +57,28 @@ fay_crime$type <- case_when(fay_crime$ucr_code=="09A" ~ "Violent",
                    fay_crime$ucr_code=="13A" ~ "Violent",
                    fay_crime$ucr_code=="120" ~ "Violent",
                    fay_crime$ucr_code=="220" ~ "Property",
-#                   fay_crime$ucr_code %in% 
-#                     c("13B","13C") ~ "Violent",
                    fay_crime$ucr_code %in% 
                      c("23A","23B","23C","23D","23E","23F","23G","23H") ~ "Property",
                    fay_crime$ucr_code=="240" ~ "Property",
                    TRUE ~ "Other/Unknown")
 
-# select and rename columns
-# fay_crime <- fay_crime %>% select(1,3,4,6:9,16:24)
+# Rename some key columns for merging with geography and
+# consistency with the code that processes the analysis of latest data/change
 fay_crime <- fay_crime %>% rename("description"="offense_description")
 fay_crime <- fay_crime %>% rename("district_name"="district")
 fay_crime <- fay_crime %>% rename("district"="zone")
 fay_crime$district[is.na(fay_crime$district)] <- "Unknown"
 
-# create separate table of crimes from the last full 12 months
+# Slide off a separate table of crimes from the last full 12 months
 fay_crime_last12 <- fay_crime %>% filter(fay_crime$date > max(fay_crime$date)-365)
 
 ### CITYWIDE CRIME 
 ### TOTALS AND OUTPUT
 
-# Set variable of city population
-# likely needs added to the tracker itself
+# Set variable of city population; needs to be updated annually
 fay_population <- 208778
 
-# Calculate of each detailed offense type CITYWIDE
+# Calculate each detailed offense type CITYWIDE
 citywide_detailed <- fay_crime %>%
   group_by(category,description,year) %>%
   summarise(count = n()) %>%
@@ -429,7 +425,7 @@ district_type <- district_type %>%
   mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # output various csvs for basic tables to be made with crime totals
-# we are dropping geometry for beats here because this is just for tables
+# we are dropping geometry for beats here because this is just for reference tables
 district_detailed %>% st_drop_geometry() %>% write_csv("data/output/districts/district_detailed.csv")
 district_category %>% st_drop_geometry() %>% write_csv("data/output/districts/district_category.csv")
 district_type %>% st_drop_geometry() %>% write_csv("data/output/districts/district_type.csv")
@@ -459,26 +455,7 @@ assaults_city <- citywide_category %>% filter(category=="Aggravated Assault")
 violence_city <- citywide_type %>% filter(type=="Violent")
 property_city <- citywide_type %>% filter(type=="Property")
 
-# Using hour to identify the hours of day when murders happen
-when_murders_happen <- fay_crime %>%
-  filter(category=="Murder") %>%
-  group_by(hour) %>%
-  summarise(count=n()) %>% 
-  arrange(hour)
-when_murders_happen$time <- case_when(when_murders_happen$hour == "0" ~ "12 a.m.",
-                                      when_murders_happen$hour %in% c("1","2","3","4","5","6","7","8","9","10","11") ~ paste0(when_murders_happen$hour," a.m."),
-                                      when_murders_happen$hour %in% c("12") ~ paste0(when_murders_happen$hour," p.m."),
-                                      when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20","21","22","23") ~ paste0((as.numeric(when_murders_happen$hour)-12)," p.m."),
-                                      TRUE ~ "Other")
-when_murders_happen$timeframe <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight from 9 p.m. to 5 a.m.",
-                                           when_murders_happen$hour %in% c("5","6","7","8","9","10","11") ~ "Morning from 5 a.m. to 12 p.m.",
-                                           when_murders_happen$hour %in% c("12","13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening from 12 p.m. to 9 p.m.",
-                                           TRUE ~ "Other")
-when_murders_happen <- when_murders_happen %>%
-  group_by(timeframe) %>%
-  summarise(total=sum(count))
-
-# Create individual spatial tables of crimes by major categories and types
+# Create individual csv files crimes by major categories and types for use in datawrapper tables
 murders_district %>% st_drop_geometry() %>% write_csv("data/output/districts/murders_district.csv")
 sexassaults_district %>% st_drop_geometry() %>% write_csv("data/output/districts/sexassaults_district.csv")
 autothefts_district %>% st_drop_geometry() %>% write_csv("data/output/districts/autothefts_district.csv")
@@ -489,7 +466,7 @@ assaults_district %>% st_drop_geometry() %>% write_csv("data/output/districts/as
 violence_district %>% st_drop_geometry() %>% write_csv("data/output/districts/violence_district.csv")
 property_district %>% st_drop_geometry() %>% write_csv("data/output/districts/property_district.csv")
 
-# TEST TEST TEST OF WHETHER RDS WILL WORK FOR TRACKERS IN AUTOMATION
+# Saving citywide files for each crime category for building tracker pages
 saveRDS(murders_city,"scripts/rds/murders_city.rds")
 saveRDS(assaults_city,"scripts/rds/assaults_city.rds")
 saveRDS(sexassaults_city,"scripts/rds/sexassaults_city.rds")
@@ -497,8 +474,8 @@ saveRDS(autothefts_city,"scripts/rds/autothefts_city.rds")
 saveRDS(thefts_city,"scripts/rds/thefts_city.rds")
 saveRDS(burglaries_city,"scripts/rds/burglaries_city.rds")
 saveRDS(robberies_city,"scripts/rds/robberies_city.rds")
-saveRDS(robberies_city,"scripts/rds/retailthefts_city.rds")
 
+# Saving district files for each crime category for building tracker pages
 saveRDS(murders_district,"scripts/rds/murders_district.rds")
 saveRDS(assaults_district,"scripts/rds/assaults_district.rds")
 saveRDS(sexassaults_district,"scripts/rds/sexassaults_district.rds")
@@ -507,16 +484,13 @@ saveRDS(thefts_district,"scripts/rds/thefts_district.rds")
 saveRDS(burglaries_district,"scripts/rds/burglaries_district.rds")
 saveRDS(robberies_district,"scripts/rds/robberies_district.rds")
 
-# Get latest date in our file and save for
-# automating the updated date text in building tracker
+# Get latest date in our file and save for update date in tracker markdowns
 asofdate <- max(fay_crime$date)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
-# additional table exports for specific charts
-when_murders_happen %>% write_csv("data/output/city/when_murders_happen.csv")
-
-# deaths cause data update for TX specific table
+# Filters shared death causes data to North Carolina specific table
 deaths <- read_excel("data/source/health/deaths.xlsx") 
 deaths <- deaths %>% filter(state=="NC")
+# Adds latest homicide rate for comparison
 deaths$Homicide <- murders_city$rate_last12
 write_csv(deaths,"data/source/health/death_rates.csv")
