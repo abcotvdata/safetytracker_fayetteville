@@ -511,11 +511,6 @@ saveRDS(robberies_district,"scripts/rds/robberies_district.rds")
 # automating the updated date text in building tracker
 asofdate <- max(fay_crime$date)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
-# creating a slightly different as of date for murder for lag reporting
-#max_date <- fay_crime %>% 
-#  filter(category=="Murder")
-#maxdate <- ceiling_date(max(max_date$date),"month")
-#saveRDS(maxdate,"scripts/rds/maxdate.rds")
 
 # additional table exports for specific charts
 when_murders_happen %>% write_csv("data/output/city/when_murders_happen.csv")
