@@ -1,49 +1,49 @@
 zone,population,placename,category,2010,2011,2012,2013,2014,2015,2016,2017,2018,total19,total20,total21,total22,total23,last12mos,total_prior3years,avg_prior3years,inc_19to22,inc_19tolast12,inc_22tolast12,inc_prior3yearavgtolast12,rate19,rate20,rate21,rate22,rate_last12,rate_prior3years
-01,4900,Murchison Road,Aggravated Assault,41,40,26,25,23,25,39,48,62,53,70,61,79,51,72,210,70,49.1,35.8,-8.9,3,1081.6,1428.6,1244.9,1612.2,1469.4,1428.6
-02,9000,"Hillendale, Rivercliff and Country Club North",Aggravated Assault,11,19,14,9,11,17,14,27,15,26,40,29,20,12,15,89,29.7,-23.1,-42.3,-25,-49,288.9,444.4,322.2,222.2,166.7,330
-03,5700,North Street Park and Winter Terrace Park,Aggravated Assault,45,40,25,27,25,32,41,48,64,47,59,62,67,36,59,188,62.7,42.6,25.5,-11.9,-6,824.6,1035.1,1087.7,1175.4,1035.1,1100
-04,3600,East Fayetteville,Aggravated Assault,16,20,16,25,24,25,25,40,35,41,42,55,64,50,68,161,53.7,56.1,65.9,6.2,27,1138.9,1166.7,1527.8,1777.8,1888.9,1491.7
-05,3700,Southwest of Downtown,Aggravated Assault,32,26,29,27,25,27,52,45,55,40,59,49,69,46,65,177,59,72.5,62.5,-5.8,10,1081.1,1594.6,1324.3,1864.9,1756.8,1594.6
-06,8200,Bordeaux and Holiday Park,Aggravated Assault,23,18,25,30,24,24,54,56,56,63,57,60,72,52,67,189,63,14.3,6.3,-6.9,6,768.3,695.1,731.7,878,817.1,768.3
-07,3600,Haymount,Aggravated Assault,14,19,18,12,12,10,24,20,30,25,19,21,28,12,22,68,22.7,12,-12,-21.4,-3,694.4,527.8,583.3,777.8,611.1,630.6
-08,5900,Edenroc and Greenwood Homes,Aggravated Assault,19,12,20,26,16,17,27,30,33,32,44,36,42,33,47,122,40.7,31.2,46.9,11.9,15,542.4,745.8,610.2,711.9,796.6,689.8
-09,5200,Green Valley Estates and Kornbow,Aggravated Assault,16,22,15,16,23,29,32,38,45,57,39,43,37,26,33,119,39.7,-35.1,-42.1,-10.8,-17,1096.2,750,826.9,711.5,634.6,763.5
-10,3800,Kirkwood,Aggravated Assault,13,5,11,10,12,6,17,21,35,21,34,39,38,11,19,111,37,81,-9.5,-50,-49,552.6,894.7,1026.3,1000,500,973.7
-11,1100,Downtown Fayetteville,Aggravated Assault,27,23,27,17,24,32,31,28,35,32,39,50,54,26,37,143,47.7,68.8,15.6,-31.5,-22,2909.1,3545.5,4545.5,4909.1,3363.6,4336.4
-12,15300,Wooded Lake and Jordan Soccer Complex,Aggravated Assault,25,13,20,7,10,18,25,23,33,41,52,56,45,24,32,153,51,9.8,-22,-28.9,-37,268,339.9,366,294.1,209.2,333.3
-13,6900,Montclair,Aggravated Assault,12,14,14,16,10,13,26,33,45,43,54,31,68,27,46,153,51,58.1,7,-32.4,-10,623.2,782.6,449.3,985.5,666.7,739.1
-14,6900,North Reilly Road,Aggravated Assault,10,13,14,8,11,17,30,29,41,37,46,43,42,29,42,131,43.7,13.5,13.5,0,-4,536.2,666.7,623.2,608.7,608.7,633.3
-15,11100,Beaver Creek and Cottonade,Aggravated Assault,19,17,28,12,23,32,30,66,55,56,51,54,44,42,50,149,49.7,-21.4,-10.7,13.6,1,504.5,459.5,486.5,396.4,450.5,447.7
-16,10700,Loch Lommond and Beaver Creek Pond,Aggravated Assault,12,11,15,16,14,24,33,43,36,59,41,59,60,40,54,160,53.3,1.7,-8.5,-10,1,551.4,383.2,551.4,560.7,504.7,498.1
-17,7000,Hollywood Heights,Aggravated Assault,33,30,32,24,20,22,40,49,41,42,48,44,53,46,53,145,48.3,26.2,26.2,0,10,600,685.7,628.6,757.1,757.1,690
-18,2200,Southwest Raleigh,Aggravated Assault,30,19,31,34,33,32,44,43,33,43,36,26,47,16,25,109,36.3,9.3,-41.9,-46.8,-31,1954.5,1636.4,1181.8,2136.4,1136.4,1650
-19,8600,"Oakdale, Queensdale and Sherwood Park",Aggravated Assault,31,32,19,18,20,16,36,55,46,40,35,42,37,33,47,114,38,-7.5,17.5,27,24,465.1,407,488.4,430.2,546.5,441.9
-20,4400,Northeast Raleigh,Aggravated Assault,7,3,0,7,5,9,4,3,11,6,11,17,15,9,10,43,14.3,150,66.7,-33.3,-30,136.4,250,386.4,340.9,227.3,325
-21,15000,"Brentwood, Arran Lakes and Ducks Landing",Aggravated Assault,28,21,19,28,28,34,49,38,72,48,90,70,74,49,69,234,78,54.2,43.8,-6.8,-12,320,600,466.7,493.3,460,520
-22,6800,Murchison Road,Aggravated Assault,19,18,15,29,16,31,41,40,72,51,54,67,45,43,50,166,55.3,-11.8,-2,11.1,-10,750,794.1,985.3,661.8,735.3,813.2
-23,5000,Hickory Grove and Bluewood Springs,Aggravated Assault,10,7,0,7,8,12,10,16,13,27,20,19,23,16,23,62,20.7,-14.8,-14.8,0,11,540,400,380,460,460,414
-24,7400,Stoney Point Road,Aggravated Assault,3,4,5,5,3,5,9,17,11,23,12,12,16,10,15,40,13.3,-30.4,-34.8,-6.2,13,310.8,162.2,162.2,216.2,202.7,179.7
-25,10600,Lake Rim,Aggravated Assault,26,13,18,19,36,17,51,47,56,78,51,60,49,37,50,160,53.3,-37.2,-35.9,2,-6,735.8,481.1,566,462.3,471.7,502.8
-26,13300,Hoke Loop Road,Aggravated Assault,10,9,14,23,12,13,22,32,40,40,33,43,32,25,31,108,36,-20,-22.5,-3.1,-14,300.8,248.1,323.3,240.6,233.1,270.7
+01,4900,Murchison Road,Aggravated Assault,41,40,26,25,23,25,39,48,62,53,70,61,79,77,91,210,70,49.1,71.7,15.2,30,1081.6,1428.6,1244.9,1612.2,1857.1,1428.6
+02,9000,"Hillendale, Rivercliff and Country Club North",Aggravated Assault,11,19,14,9,11,17,14,27,15,26,40,29,20,22,24,89,29.7,-23.1,-7.7,20,-19,288.9,444.4,322.2,222.2,266.7,330
+03,5700,North Street Park and Winter Terrace Park,Aggravated Assault,45,40,25,27,25,32,41,48,64,47,59,62,67,62,81,188,62.7,42.6,72.3,20.9,29,824.6,1035.1,1087.7,1175.4,1421.1,1100
+04,3600,East Fayetteville,Aggravated Assault,16,20,16,25,24,25,25,40,35,41,42,55,64,83,98,161,53.7,56.1,139,53.1,82,1138.9,1166.7,1527.8,1777.8,2722.2,1491.7
+05,3700,Southwest of Downtown,Aggravated Assault,32,26,29,27,25,27,52,45,55,40,59,49,69,76,92,177,59,72.5,130,33.3,56,1081.1,1594.6,1324.3,1864.9,2486.5,1594.6
+06,8200,Bordeaux and Holiday Park,Aggravated Assault,23,18,25,30,24,24,54,56,56,63,57,60,72,92,107,189,63,14.3,69.8,48.6,70,768.3,695.1,731.7,878,1304.9,768.3
+07,3600,Haymount,Aggravated Assault,14,19,18,12,12,10,24,20,30,25,19,21,28,26,34,68,22.7,12,36,21.4,50,694.4,527.8,583.3,777.8,944.4,630.6
+08,5900,Edenroc and Greenwood Homes,Aggravated Assault,19,12,20,26,16,17,27,30,33,32,44,36,42,51,63,122,40.7,31.2,96.9,50,55,542.4,745.8,610.2,711.9,1067.8,689.8
+09,5200,Green Valley Estates and Kornbow,Aggravated Assault,16,22,15,16,23,29,32,38,45,57,39,43,37,41,47,119,39.7,-35.1,-17.5,27,18,1096.2,750,826.9,711.5,903.8,763.5
+10,3800,Kirkwood,Aggravated Assault,13,5,11,10,12,6,17,21,35,21,34,39,38,20,28,111,37,81,33.3,-26.3,-24,552.6,894.7,1026.3,1000,736.8,973.7
+11,1100,Downtown Fayetteville,Aggravated Assault,27,23,27,17,24,32,31,28,35,32,39,50,54,48,55,143,47.7,68.8,71.9,1.9,15,2909.1,3545.5,4545.5,4909.1,5000,4336.4
+12,15300,Wooded Lake and Jordan Soccer Complex,Aggravated Assault,25,13,20,7,10,18,25,23,33,41,52,56,45,37,42,153,51,9.8,2.4,-6.7,-18,268,339.9,366,294.1,274.5,333.3
+13,6900,Montclair,Aggravated Assault,12,14,14,16,10,13,26,33,45,43,54,31,68,42,59,153,51,58.1,37.2,-13.2,16,623.2,782.6,449.3,985.5,855.1,739.1
+14,6900,North Reilly Road,Aggravated Assault,10,13,14,8,11,17,30,29,41,37,46,43,42,48,59,131,43.7,13.5,59.5,40.5,35,536.2,666.7,623.2,608.7,855.1,633.3
+15,11100,Beaver Creek and Cottonade,Aggravated Assault,19,17,28,12,23,32,30,66,55,56,51,54,44,67,75,149,49.7,-21.4,33.9,70.5,51,504.5,459.5,486.5,396.4,675.7,447.7
+16,10700,Loch Lommond and Beaver Creek Pond,Aggravated Assault,12,11,15,16,14,24,33,43,36,59,41,59,60,65,74,160,53.3,1.7,25.4,23.3,39,551.4,383.2,551.4,560.7,691.6,498.1
+17,7000,Hollywood Heights,Aggravated Assault,33,30,32,24,20,22,40,49,41,42,48,44,53,83,89,145,48.3,26.2,111.9,67.9,84,600,685.7,628.6,757.1,1271.4,690
+18,2200,Southwest Raleigh,Aggravated Assault,30,19,31,34,33,32,44,43,33,43,36,26,47,25,31,109,36.3,9.3,-27.9,-34,-15,1954.5,1636.4,1181.8,2136.4,1409.1,1650
+19,8600,"Oakdale, Queensdale and Sherwood Park",Aggravated Assault,31,32,19,18,20,16,36,55,46,40,35,42,37,54,66,114,38,-7.5,65,78.4,74,465.1,407,488.4,430.2,767.4,441.9
+20,4400,Northeast Raleigh,Aggravated Assault,7,3,0,7,5,9,4,3,11,6,11,17,15,16,17,43,14.3,150,183.3,13.3,19,136.4,250,386.4,340.9,386.4,325
+21,15000,"Brentwood, Arran Lakes and Ducks Landing",Aggravated Assault,28,21,19,28,28,34,49,38,72,48,90,70,74,84,103,234,78,54.2,114.6,39.2,32,320,600,466.7,493.3,686.7,520
+22,6800,Murchison Road,Aggravated Assault,19,18,15,29,16,31,41,40,72,51,54,67,45,69,72,166,55.3,-11.8,41.2,60,30,750,794.1,985.3,661.8,1058.8,813.2
+23,5000,Hickory Grove and Bluewood Springs,Aggravated Assault,10,7,0,7,8,12,10,16,13,27,20,19,23,27,33,62,20.7,-14.8,22.2,43.5,59,540,400,380,460,660,414
+24,7400,Stoney Point Road,Aggravated Assault,3,4,5,5,3,5,9,17,11,23,12,12,16,16,21,40,13.3,-30.4,-8.7,31.2,58,310.8,162.2,162.2,216.2,283.8,179.7
+25,10600,Lake Rim,Aggravated Assault,26,13,18,19,36,17,51,47,56,78,51,60,49,60,72,160,53.3,-37.2,-7.7,46.9,35,735.8,481.1,566,462.3,679.2,502.8
+26,13300,Hoke Loop Road,Aggravated Assault,10,9,14,23,12,13,22,32,40,40,33,43,32,37,43,108,36,-20,7.5,34.4,19,300.8,248.1,323.3,240.6,323.3,270.7
 AP,0,Airport,Aggravated Assault,1,0,0,0,0,0,1,1,0,0,1,0,0,0,0,1,0.3,NA,NA,NA,-100,NA,NA,NA,NA,NA,NA
-ALPH,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+ALPH,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 BRAV,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 C10,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 CFPD,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,-100,-100,NA,NA,NA,NA,NA,NA,NA,NA
 CHAR,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 CNT,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-DELT,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+DELT,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 ECHO,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 FOXT,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-GOLF,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+GOLF,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HM1,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HM3,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-HOTE,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-INDI,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+HOTE,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+INDI,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO2,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO3,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO5,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO6,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO7,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SO9,NA,NA,Aggravated Assault,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Unknown,NA,NA,Aggravated Assault,0,10,18,26,14,16,8,3,4,14,4,4,9,5,6,17,5.7,-35.7,-57.1,-33.3,5,NA,NA,NA,NA,NA,NA
+Unknown,NA,NA,Aggravated Assault,0,10,18,26,14,16,8,3,4,14,4,4,9,9,10,17,5.7,-35.7,-28.6,11.1,75,NA,NA,NA,NA,NA,NA
