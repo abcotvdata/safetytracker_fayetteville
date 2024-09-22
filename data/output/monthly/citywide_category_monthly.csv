@@ -169,13 +169,13 @@ Aggravated Assault,2023-11-01,77,72
 Aggravated Assault,2023-12-01,50,67
 Aggravated Assault,2024-01-01,67,65
 Aggravated Assault,2024-02-01,56,58
-Aggravated Assault,2024-03-01,92,72
-Aggravated Assault,2024-04-01,136,95
-Aggravated Assault,2024-05-01,134,121
+Aggravated Assault,2024-03-01,86,70
+Aggravated Assault,2024-04-01,136,93
+Aggravated Assault,2024-05-01,134,119
 Aggravated Assault,2024-06-01,116,129
 Aggravated Assault,2024-07-01,130,127
 Aggravated Assault,2024-08-01,114,120
-Aggravated Assault,2024-09-01,47,97
+Aggravated Assault,2024-09-01,67,104
 Burglary,2010-01-01,359,NA
 Burglary,2010-02-01,250,NA
 Burglary,2010-03-01,359,323
@@ -351,8 +351,8 @@ Burglary,2024-04-01,180,130
 Burglary,2024-05-01,152,159
 Burglary,2024-06-01,112,148
 Burglary,2024-07-01,160,141
-Burglary,2024-08-01,118,130
-Burglary,2024-09-01,38,105
+Burglary,2024-08-01,116,129
+Burglary,2024-09-01,57,111
 Motor Vehicle Theft,2010-01-01,45,NA
 Motor Vehicle Theft,2010-02-01,50,NA
 Motor Vehicle Theft,2010-03-01,65,53
@@ -529,7 +529,7 @@ Motor Vehicle Theft,2024-05-01,120,112
 Motor Vehicle Theft,2024-06-01,138,127
 Motor Vehicle Theft,2024-07-01,124,127
 Motor Vehicle Theft,2024-08-01,152,138
-Motor Vehicle Theft,2024-09-01,43,106
+Motor Vehicle Theft,2024-09-01,54,110
 Murder,2010-03-01,2,NA
 Murder,2010-05-01,4,NA
 Murder,2010-06-01,1,2
@@ -682,6 +682,7 @@ Murder,2024-02-01,1,2
 Murder,2024-05-01,6,3
 Murder,2024-06-01,8,5
 Murder,2024-07-01,2,5
+Murder,2024-09-01,2,4
 Other/Unknown,2010-01-01,711,NA
 Other/Unknown,2010-02-01,560,NA
 Other/Unknown,2010-03-01,681,651
@@ -852,13 +853,13 @@ Other/Unknown,2023-11-01,533,542
 Other/Unknown,2023-12-01,526,537
 Other/Unknown,2024-01-01,515,525
 Other/Unknown,2024-02-01,533,525
-Other/Unknown,2024-03-01,750,599
-Other/Unknown,2024-04-01,1057,780
-Other/Unknown,2024-05-01,1150,986
+Other/Unknown,2024-03-01,715,588
+Other/Unknown,2024-04-01,1057,768
+Other/Unknown,2024-05-01,1150,974
 Other/Unknown,2024-06-01,1118,1108
 Other/Unknown,2024-07-01,918,1062
-Other/Unknown,2024-08-01,922,986
-Other/Unknown,2024-09-01,408,749
+Other/Unknown,2024-08-01,924,987
+Other/Unknown,2024-09-01,561,801
 Robbery,2010-01-01,37,NA
 Robbery,2010-02-01,27,NA
 Robbery,2010-03-01,40,35
@@ -1035,7 +1036,7 @@ Robbery,2024-05-01,42,32
 Robbery,2024-06-01,36,35
 Robbery,2024-07-01,38,39
 Robbery,2024-08-01,28,34
-Robbery,2024-09-01,21,29
+Robbery,2024-09-01,26,31
 Theft,2010-01-01,662,NA
 Theft,2010-02-01,503,NA
 Theft,2010-03-01,623,596
@@ -1210,6 +1211,6 @@ Theft,2024-03-01,626,500
 Theft,2024-04-01,884,626
 Theft,2024-05-01,1033,848
 Theft,2024-06-01,896,938
-Theft,2024-07-01,974,968
-Theft,2024-08-01,867,912
-Theft,2024-09-01,279,707
+Theft,2024-07-01,973,967
+Theft,2024-08-01,866,912
+Theft,2024-09-01,373,737
