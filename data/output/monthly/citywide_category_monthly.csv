@@ -174,9 +174,9 @@ Aggravated Assault,2024-04-01,68,64
 Aggravated Assault,2024-05-01,67,67
 Aggravated Assault,2024-06-01,58,64
 Aggravated Assault,2024-07-01,65,63
-Aggravated Assault,2024-08-01,96,73
-Aggravated Assault,2024-09-01,156,106
-Aggravated Assault,2024-10-01,156,136
+Aggravated Assault,2024-08-01,85,69
+Aggravated Assault,2024-09-01,156,102
+Aggravated Assault,2024-10-01,156,132
 Aggravated Assault,2024-11-01,102,138
 Aggravated Assault,2024-12-01,106,121
 Aggravated Assault,2025-01-01,120,109
@@ -189,7 +189,7 @@ Aggravated Assault,2025-07-01,130,125
 Aggravated Assault,2025-08-01,128,126
 Aggravated Assault,2025-09-01,110,123
 Aggravated Assault,2025-10-01,96,111
-Aggravated Assault,2025-11-01,16,74
+Aggravated Assault,2025-11-01,27,78
 Burglary,2010-01-01,359,NA
 Burglary,2010-02-01,250,NA
 Burglary,2010-03-01,359,323
@@ -372,15 +372,15 @@ Burglary,2024-11-01,48,63
 Burglary,2024-12-01,58,59
 Burglary,2025-01-01,59,55
 Burglary,2025-02-01,48,55
-Burglary,2025-03-01,74,60
-Burglary,2025-04-01,114,79
-Burglary,2025-05-01,144,111
+Burglary,2025-03-01,61,56
+Burglary,2025-04-01,114,74
+Burglary,2025-05-01,144,106
 Burglary,2025-06-01,154,137
 Burglary,2025-07-01,70,123
 Burglary,2025-08-01,73,99
 Burglary,2025-09-01,64,69
 Burglary,2025-10-01,61,66
-Burglary,2025-11-01,11,45
+Burglary,2025-11-01,24,50
 Motor Vehicle Theft,2010-01-01,45,NA
 Motor Vehicle Theft,2010-02-01,50,NA
 Motor Vehicle Theft,2010-03-01,65,53
@@ -563,15 +563,15 @@ Motor Vehicle Theft,2024-11-01,63,64
 Motor Vehicle Theft,2024-12-01,80,69
 Motor Vehicle Theft,2025-01-01,50,64
 Motor Vehicle Theft,2025-02-01,48,59
-Motor Vehicle Theft,2025-03-01,97,65
-Motor Vehicle Theft,2025-04-01,138,94
-Motor Vehicle Theft,2025-05-01,150,128
-Motor Vehicle Theft,2025-06-01,92,127
+Motor Vehicle Theft,2025-03-01,79,59
+Motor Vehicle Theft,2025-04-01,137,88
+Motor Vehicle Theft,2025-05-01,150,122
+Motor Vehicle Theft,2025-06-01,92,126
 Motor Vehicle Theft,2025-07-01,89,110
 Motor Vehicle Theft,2025-08-01,55,79
 Motor Vehicle Theft,2025-09-01,48,64
 Motor Vehicle Theft,2025-10-01,38,47
-Motor Vehicle Theft,2025-11-01,20,35
+Motor Vehicle Theft,2025-11-01,29,38
 Murder,2010-03-01,2,NA
 Murder,2010-05-01,4,NA
 Murder,2010-06-01,1,2
@@ -913,22 +913,22 @@ Other/Unknown,2024-04-01,529,524
 Other/Unknown,2024-05-01,576,538
 Other/Unknown,2024-06-01,560,555
 Other/Unknown,2024-07-01,461,532
-Other/Unknown,2024-08-01,612,544
-Other/Unknown,2024-09-01,723,599
-Other/Unknown,2024-10-01,726,687
+Other/Unknown,2024-08-01,569,530
+Other/Unknown,2024-09-01,723,584
+Other/Unknown,2024-10-01,726,673
 Other/Unknown,2024-11-01,525,658
 Other/Unknown,2024-12-01,596,616
 Other/Unknown,2025-01-01,593,571
 Other/Unknown,2025-02-01,549,579
-Other/Unknown,2025-03-01,635,592
-Other/Unknown,2025-04-01,934,706
-Other/Unknown,2025-05-01,987,852
+Other/Unknown,2025-03-01,583,575
+Other/Unknown,2025-04-01,933,688
+Other/Unknown,2025-05-01,987,834
 Other/Unknown,2025-06-01,804,908
-Other/Unknown,2025-07-01,791,861
+Other/Unknown,2025-07-01,792,861
 Other/Unknown,2025-08-01,703,766
 Other/Unknown,2025-09-01,740,745
 Other/Unknown,2025-10-01,664,702
-Other/Unknown,2025-11-01,106,503
+Other/Unknown,2025-11-01,215,540
 Robbery,2010-01-01,37,NA
 Robbery,2010-02-01,27,NA
 Robbery,2010-03-01,40,35
@@ -1111,15 +1111,15 @@ Robbery,2024-11-01,17,19
 Robbery,2024-12-01,25,20
 Robbery,2025-01-01,15,19
 Robbery,2025-02-01,16,19
-Robbery,2025-03-01,11,14
-Robbery,2025-04-01,42,23
+Robbery,2025-03-01,9,13
+Robbery,2025-04-01,42,22
 Robbery,2025-05-01,47,33
 Robbery,2025-06-01,40,43
 Robbery,2025-07-01,36,41
 Robbery,2025-08-01,22,33
 Robbery,2025-09-01,22,27
 Robbery,2025-10-01,14,19
-Robbery,2025-11-01,4,13
+Robbery,2025-11-01,12,16
 Theft,2010-01-01,662,NA
 Theft,2010-02-01,503,NA
 Theft,2010-03-01,623,596
@@ -1302,12 +1302,12 @@ Theft,2024-11-01,349,380
 Theft,2024-12-01,367,376
 Theft,2025-01-01,360,359
 Theft,2025-02-01,319,349
-Theft,2025-03-01,425,368
-Theft,2025-04-01,759,501
-Theft,2025-05-01,850,678
+Theft,2025-03-01,342,340
+Theft,2025-04-01,758,473
+Theft,2025-05-01,850,650
 Theft,2025-06-01,759,789
 Theft,2025-07-01,518,709
 Theft,2025-08-01,410,562
-Theft,2025-09-01,417,448
-Theft,2025-10-01,368,398
-Theft,2025-11-01,82,289
+Theft,2025-09-01,418,449
+Theft,2025-10-01,368,399
+Theft,2025-11-01,155,314
