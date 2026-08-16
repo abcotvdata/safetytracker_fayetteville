@@ -184,9 +184,9 @@ Aggravated Assault,2025-02-01,46,53
 Aggravated Assault,2025-03-01,49,52
 Aggravated Assault,2025-04-01,63,53
 Aggravated Assault,2025-05-01,62,58
-Aggravated Assault,2025-06-01,116,80
-Aggravated Assault,2025-07-01,130,103
-Aggravated Assault,2025-08-01,128,125
+Aggravated Assault,2025-06-01,97,74
+Aggravated Assault,2025-07-01,130,96
+Aggravated Assault,2025-08-01,128,118
 Aggravated Assault,2025-09-01,116,125
 Aggravated Assault,2025-10-01,106,117
 Aggravated Assault,2025-11-01,130,117
@@ -198,7 +198,7 @@ Aggravated Assault,2026-04-01,113,108
 Aggravated Assault,2026-05-01,112,116
 Aggravated Assault,2026-06-01,123,116
 Aggravated Assault,2026-07-01,70,102
-Aggravated Assault,2026-08-01,16,70
+Aggravated Assault,2026-08-01,35,76
 Burglary,2010-01-01,359,NA
 Burglary,2010-02-01,250,NA
 Burglary,2010-03-01,359,323
@@ -390,15 +390,15 @@ Burglary,2025-08-01,75,72
 Burglary,2025-09-01,64,67
 Burglary,2025-10-01,62,67
 Burglary,2025-11-01,50,59
-Burglary,2025-12-01,138,83
-Burglary,2026-01-01,122,103
-Burglary,2026-02-01,96,119
+Burglary,2025-12-01,116,76
+Burglary,2026-01-01,122,96
+Burglary,2026-02-01,96,111
 Burglary,2026-03-01,108,109
 Burglary,2026-04-01,102,102
-Burglary,2026-05-01,184,131
-Burglary,2026-06-01,125,137
-Burglary,2026-07-01,52,120
-Burglary,2026-08-01,19,65
+Burglary,2026-05-01,186,132
+Burglary,2026-06-01,125,138
+Burglary,2026-07-01,52,121
+Burglary,2026-08-01,35,71
 Motor Vehicle Theft,2010-01-01,45,NA
 Motor Vehicle Theft,2010-02-01,50,NA
 Motor Vehicle Theft,2010-03-01,65,53
@@ -590,15 +590,15 @@ Motor Vehicle Theft,2025-08-01,55,60
 Motor Vehicle Theft,2025-09-01,48,61
 Motor Vehicle Theft,2025-10-01,37,47
 Motor Vehicle Theft,2025-11-01,61,49
-Motor Vehicle Theft,2025-12-01,87,62
-Motor Vehicle Theft,2026-01-01,78,75
-Motor Vehicle Theft,2026-02-01,46,70
+Motor Vehicle Theft,2025-12-01,77,58
+Motor Vehicle Theft,2026-01-01,78,72
+Motor Vehicle Theft,2026-02-01,46,67
 Motor Vehicle Theft,2026-03-01,74,66
 Motor Vehicle Theft,2026-04-01,118,79
 Motor Vehicle Theft,2026-05-01,154,115
-Motor Vehicle Theft,2026-06-01,98,123
+Motor Vehicle Theft,2026-06-01,99,124
 Motor Vehicle Theft,2026-07-01,66,106
-Motor Vehicle Theft,2026-08-01,13,59
+Motor Vehicle Theft,2026-08-01,20,62
 Murder,2010-03-01,2,NA
 Murder,2010-05-01,4,NA
 Murder,2010-06-01,1,2
@@ -760,7 +760,7 @@ Murder,2025-02-01,3,4
 Murder,2025-03-01,2,4
 Murder,2025-04-01,6,4
 Murder,2025-05-01,3,4
-Murder,2025-06-01,4,4
+Murder,2025-06-01,3,4
 Murder,2025-07-01,2,3
 Murder,2025-08-01,6,4
 Murder,2025-09-01,6,5
@@ -956,21 +956,21 @@ Other/Unknown,2025-02-01,381,400
 Other/Unknown,2025-03-01,402,396
 Other/Unknown,2025-04-01,467,417
 Other/Unknown,2025-05-01,494,454
-Other/Unknown,2025-06-01,568,510
-Other/Unknown,2025-07-01,742,601
-Other/Unknown,2025-08-01,705,672
+Other/Unknown,2025-06-01,510,490
+Other/Unknown,2025-07-01,742,582
+Other/Unknown,2025-08-01,705,652
 Other/Unknown,2025-09-01,755,734
 Other/Unknown,2025-10-01,707,722
 Other/Unknown,2025-11-01,650,704
-Other/Unknown,2025-12-01,851,736
-Other/Unknown,2026-01-01,852,784
-Other/Unknown,2026-02-01,778,827
+Other/Unknown,2025-12-01,784,714
+Other/Unknown,2026-01-01,852,762
+Other/Unknown,2026-02-01,778,805
 Other/Unknown,2026-03-01,974,868
 Other/Unknown,2026-04-01,905,886
-Other/Unknown,2026-05-01,1056,978
-Other/Unknown,2026-06-01,997,986
-Other/Unknown,2026-07-01,616,890
-Other/Unknown,2026-08-01,109,574
+Other/Unknown,2026-05-01,1057,979
+Other/Unknown,2026-06-01,1000,987
+Other/Unknown,2026-07-01,616,891
+Other/Unknown,2026-08-01,222,613
 Robbery,2010-01-01,37,NA
 Robbery,2010-02-01,27,NA
 Robbery,2010-03-01,40,35
@@ -1162,7 +1162,7 @@ Robbery,2025-08-01,22,23
 Robbery,2025-09-01,22,24
 Robbery,2025-10-01,14,19
 Robbery,2025-11-01,17,18
-Robbery,2025-12-01,26,19
+Robbery,2025-12-01,25,19
 Robbery,2026-01-01,26,23
 Robbery,2026-02-01,14,22
 Robbery,2026-03-01,26,22
@@ -1170,7 +1170,7 @@ Robbery,2026-04-01,44,28
 Robbery,2026-05-01,28,33
 Robbery,2026-06-01,22,31
 Robbery,2026-07-01,12,21
-Robbery,2026-08-01,1,12
+Robbery,2026-08-01,8,14
 Theft,2010-01-01,662,NA
 Theft,2010-02-01,503,NA
 Theft,2010-03-01,623,596
@@ -1362,12 +1362,12 @@ Theft,2025-08-01,410,417
 Theft,2025-09-01,419,428
 Theft,2025-10-01,375,401
 Theft,2025-11-01,364,386
-Theft,2025-12-01,711,483
-Theft,2026-01-01,756,610
-Theft,2026-02-01,634,700
+Theft,2025-12-01,630,456
+Theft,2026-01-01,756,583
+Theft,2026-02-01,634,673
 Theft,2026-03-01,750,713
 Theft,2026-04-01,812,732
 Theft,2026-05-01,766,776
 Theft,2026-06-01,686,755
-Theft,2026-07-01,392,615
-Theft,2026-08-01,83,387
+Theft,2026-07-01,394,615
+Theft,2026-08-01,171,417
