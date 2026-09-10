@@ -360,7 +360,7 @@ fayetteville_murder_map <- leaflet(murders_district, options = leafletOptions(zo
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-78.94, 35.06, zoom = 11.5) %>% 
-  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addTiles(urlTemplate = "https://pmtiles-raster.launch.studioshare.wds.io/styles/white-abc/{z}/{x}/{y}.png") %>%
   addPolygons(color = "white", 
               popup = murderlabel,
               popupOptions = popupOptions(maxWidth ="200", 
